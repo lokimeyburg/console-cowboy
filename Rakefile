@@ -167,6 +167,12 @@ namespace :install do
     brew_install 'tmux', :requires => '>= 1.8'
   end
 
+  desc 'Install Base16 for the shell'
+  task :base16_shell do
+    step 'base16_shell'
+    sh "git clone git@github.com:chriskempson/base16-shell.git ~/.config/base16-shell"
+  end
+
   desc 'Install MacVim'
   task :macvim do
     step 'MacVim'
@@ -232,6 +238,7 @@ task :install do
   Rake::Task['install:reattach_to_user_namespace'].invoke
   Rake::Task['install:tmux'].invoke
   Rake::Task['install:macvim'].invoke
+  Rake::Task['install:base16_shell'].invoke
 
   # TODO install gem ctags?
   # TODO run gem ctags?
@@ -261,6 +268,12 @@ task :install do
   puts "  then clicking the 'Colors' tab, 'Load Presets...' and choosing a Ocean Dark option.)"
   puts "  Also be sure to set Terminal Type to 'xterm-256color' in the 'Terminal' tab."
   puts "  You may have to restart iTerm for the color changes to take place."
+  puts
+  puts "  Lastly, you need to let ZSH know that you wish to use a Base16 Shell"
+  puts "  in your .zshrc file add:"
+  puts "  BASE16_SCHEME='ocean'"
+  puts "  BASE16_SHELL='$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh'"
+  puts "  [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL"
   puts
   puts "  Enjoy!"
   puts
