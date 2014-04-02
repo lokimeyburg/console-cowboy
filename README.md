@@ -22,9 +22,9 @@ My carefully curated Vim and Tmux config files. Made for Mac OS X.
 * `\\` toggles visual selection comment lines
 * `vii`/`vai` visually select *in* or *around* the cursor's indent
 * `,[space]` strips trailing whitespace
-* `<C-]>` jump to definition using ctags
 * `,l` begins aligning lines on a string, usually used as `,l=` to align assignments
 * `<C-hjkl>` move between windows, shorthand for `<C-w> hjkl`
+* `<C-]>` & `<C-[>` to move between vim tabs
 
 ### Tmux
 

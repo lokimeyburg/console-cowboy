@@ -77,6 +77,18 @@ nmap <leader>c <Plug>Kwbd
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 " Spacebar to clear search highlighting
 map <Space> :noh<cr>
+" Make enter add a line and shift enter add one above
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>k
+" Move between tabs easier
+map <leader>] :tabn<cr>
+map <Leader>[ :tabp<cr>
+
+" Autocomplete(NeoComplCache) defaults
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " in case you forgot to sudo
 cmap w!! %!sudo tee > /dev/null %
@@ -119,7 +131,6 @@ set t_Co=256 " 256 color mode
 syntax enable
 set background=dark
 colorscheme base16-ocean
-set cursorline
 
 " Go crazy!
 if filereadable(expand("~/.vimrc.local"))
