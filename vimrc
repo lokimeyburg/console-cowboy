@@ -39,7 +39,8 @@ set shiftwidth=2                                             " normal mode inden
 set showcmd
 set smartcase                                                " case-sensitive search if any caps
 set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
-set tabstop=8                                                " actual tabs occupy 8 characters
+set tabstop=2                                                " actual tabs occupy 2 characters
+set paste                                                    " proper indent when indenting in insert mode
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
@@ -50,6 +51,7 @@ set hlsearch                                                 " highlight search 
 set incsearch                                                " show search matches as you type
 set showmatch                                                " set show matching parenthesis
 set timeoutlen=1000 ttimeoutlen=0                            " leave insert mode quickly
+k                                                    " proper indent when indenting in insert mode
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
@@ -83,12 +85,6 @@ nmap <CR> o<Esc>k
 " Move between tabs easier
 map <leader>] :tabn<cr>
 map <Leader>[ :tabp<cr>
-
-" Autocomplete(NeoComplCache) defaults
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " in case you forgot to sudo
 cmap w!! %!sudo tee > /dev/null %
