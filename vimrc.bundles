@@ -1,6 +1,6 @@
-" Bundles here are part of the core Maximum Awesome setup
+" Bundles here are part of the core Console Cowboy setup
 " Do NOT add bundles to this list, as they might get removed when you upgrade
-" Maximum Awesome.
+" Console Cowboy
 " Please create ~/.vimrc.bundles.local and add any extra bundles you want there
 Bundle 'airblade/vim-gitgutter'
 Bundle 'austintaylor/vim-indentobject'
