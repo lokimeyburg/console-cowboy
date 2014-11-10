@@ -51,7 +51,6 @@ set hlsearch                                                 " highlight search 
 set incsearch                                                " show search matches as you type
 set showmatch                                                " set show matching parenthesis
 set timeoutlen=1000 ttimeoutlen=0                            " leave insert mode quickly
-k                                                    " proper indent when indenting in insert mode
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
@@ -85,6 +84,12 @@ nmap <CR> o<Esc>k
 " Move between tabs easier
 map <leader>] :tabn<cr>
 map <Leader>[ :tabp<cr>
+" delete without yanking
+" nnoremap <leader>d "_d
+" vnoremap <leader>d "_d
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP
 
 " in case you forgot to sudo
 cmap w!! %!sudo tee > /dev/null %
@@ -121,7 +126,6 @@ else
 endif
 
 " Theme  
-" " ----------------------------------------------
 let base16colorspace=256  " Access colors present in 256 colorspace
 set t_Co=256 " 256 color mode
 syntax enable
