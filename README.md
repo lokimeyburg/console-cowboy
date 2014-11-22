@@ -50,6 +50,22 @@ You can adjust the size of the smaller panes in `tmux.conf` by lowering or incre
 In your home directory, Console Cowboy creates a `.vimrc.local` file where you can customize
 Vim to your heart’s content.
 
+## ZSH Theme
+
+Colors are a tricky beast. First install [this shell script](https://github.com/chriskempson/base16-shell):
+
+```
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+```
+
+In order to make iTerm and Vim work add the bottom of your `.zshrc` file:
+
+```
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+```
+
 ## Uninstall
 
     rake uninstall
