@@ -8,9 +8,9 @@ My carefully curated Vim and Tmux config files. Made for Mac OS X.
 
 ## What's in it?
 
-* [MacVim](https://code.google.com/p/macvim/)
 * [iTerm 2](http://www.iterm2.com/)
 * [tmux](http://tmux.sourceforge.net/)
+* [MacVim](https://code.google.com/p/macvim/)
 * [Ocean Dark Base16 theme](http://chriskempson.github.io/base16/#ocean)
 
 ### Vim 
