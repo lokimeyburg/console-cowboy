@@ -13,6 +13,11 @@ My carefully curated Vim and Tmux config files. Made for Mac OS X.
 * [MacVim](https://code.google.com/p/macvim/)
 * [Ocean Dark Base16 theme](http://chriskempson.github.io/base16/#ocean)
 
+## Why should I use Vim and TMUX?
+
+* Checkout [Chris Hunt's great intro talk](https://www.youtube.com/watch?v=9jzWDr24UHQ) about the benefits of using both Vim and TMUX
+* Checkout [Gary Bernhardt switching between VIM and the terminal](https://youtu.be/tdNnN5yTIeM?t=3m05s) so you can get motivated
+
 ### Vim 
 
 * `,d` brings up [NERDTree](https://github.com/scrooloose/nerdtree), a sidebar buffer for navigating and manipulating files
