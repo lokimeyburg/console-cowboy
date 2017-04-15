@@ -10,7 +10,7 @@ def brew_install(package, *args)
   elsif options[:requires]
     # brew did not error out, verify tmux is greater than 1.8
     # e.g. brew_tmux_query = 'tmux 1.9a'
-    installed_version = versions.split(/\n/).first.split(' ')[1]
+    installed_version = versions.split(/\n/).first.split(' ').last
     unless version_match?(options[:requires], installed_version)
       sh "brew upgrade #{package} #{args.join ' '}"
     end
@@ -19,7 +19,10 @@ end
 
 def version_match?(requirement, version)
   # This is a hack, but it lets us avoid a gem dep for version checking.
-  Gem::Dependency.new('', requirement).match?('', version)
+  # Gem dependencies must be numeric, so we remove non-numeric characters here.
+  matches = version.match(/(?<versionish>\d+\.\d+)/)
+  return false unless matches.length > 0
+  Gem::Dependency.new('', requirement).match?('', matches.captures[0])
 end
 
 def install_github_bundle(user, package)
@@ -32,7 +35,7 @@ def brew_cask_install(package, *options)
   output = `brew cask info #{package}`
   return unless output.include?('Not installed')
 
-  sh "brew cask install #{package} #{options.join ' '}"
+  sh "brew cask install --binarydir=#{`brew --prefix`.chomp}/bin #{package} #{options.join ' '}"
 end
 
 def step(description)
@@ -119,7 +122,7 @@ namespace :install do
   desc 'Update or Install Brew'
   task :brew do
     step 'Homebrew'
-    unless system('which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"')
+    unless system('which brew > /dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
       raise "Homebrew must be installed before continuing."
     end
   end
@@ -127,11 +130,10 @@ namespace :install do
   desc 'Install Homebrew Cask'
   task :brew_cask do
     step 'Homebrew Cask'
-    unless system('brew tap | grep phinze/cask > /dev/null') || system('brew tap phinze/homebrew-cask')
-      abort "Failed to tap phinze/homebrew-cask in Homebrew."
+    system('brew untap phinze/cask') if system('brew tap | grep phinze/cask > /dev/null')
+    unless system('brew tap | grep caskroom/cask > /dev/null') || system('brew tap caskroom/cask')
+      abort "Failed to tap caskroom/cask in Homebrew."
     end
-
-    brew_install 'brew-cask'
   end
 
   desc 'Install The Silver Searcher'
@@ -164,14 +166,7 @@ namespace :install do
   task :tmux do
     step 'tmux'
     # tmux copy-pipe function needs tmux >= 1.8
-    brew_install 'tmux', :requires => '>= 1.9a'
-  end
-
-  desc 'Install Base16 for the shell'
-  task :base16_shell do
-    step 'base16_shell'
-    sh "rm -rf ~/.config/base16-shell"
-    sh "git clone git@github.com:chriskempson/base16-shell.git ~/.config/base16-shell"
+    brew_install 'tmux', :requires => '>= 2.1'
   end
 
   desc 'Install MacVim'
@@ -189,6 +184,7 @@ namespace :install do
       puts %{  echo 'export PATH="~/bin:$PATH"' >> ~/.bashrc}
       puts
       puts 'The exact command and file will vary by your shell and configuration.'
+      puts 'You may need to restart your shell.'
     end
 
     FileUtils.mkdir_p(bin_dir)
@@ -205,8 +201,8 @@ exec /Applications/MacVim.app/Contents/MacOS/Vim "$@"
   desc 'Install Vundle'
   task :vundle do
     step 'vundle'
-    install_github_bundle 'gmarik','vundle'
-    sh '~/bin/vim -c "BundleInstall" -c "q" -c "q"'
+    install_github_bundle 'VundleVim','Vundle.vim'
+    sh '~/bin/vim -c "PluginInstall!" -c "q" -c "q"'
   end
 end
 
@@ -219,7 +215,8 @@ end
 
 COPIED_FILES = filemap(
   'vimrc.local'         => '~/.vimrc.local',
-  'vimrc.bundles.local' => '~/.vimrc.bundles.local'
+  'vimrc.bundles.local' => '~/.vimrc.bundles.local',
+  'tmux.conf.local'     => '~/.tmux.conf.local'
 )
 
 LINKED_FILES = filemap(
@@ -239,7 +236,6 @@ task :install do
   Rake::Task['install:reattach_to_user_namespace'].invoke
   Rake::Task['install:tmux'].invoke
   Rake::Task['install:macvim'].invoke
-  Rake::Task['install:base16_shell'].invoke
 
   # TODO install gem ctags?
   # TODO run gem ctags?

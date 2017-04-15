@@ -13,7 +13,7 @@ My carefully curated Vim and Tmux config files. Made for Mac OS X.
 * [MacVim](https://code.google.com/p/macvim/)
 * [Ocean Dark Base16 theme](http://chriskempson.github.io/base16/#ocean)
 
-## Why should I use Vim and TMUX?
+## Why You Should Use Vim and TMUX
 
 * Checkout [Chris Hunt's great intro talk](https://www.youtube.com/watch?v=9jzWDr24UHQ) about the benefits of using both Vim and TMUX
 * Checkout [Gary Bernhardt switching between VIM and the terminal](https://youtu.be/tdNnN5yTIeM?t=3m05s) so you can get motivated
@@ -67,9 +67,25 @@ In order to make iTerm and Vim work add the bottom of your `.zshrc` file:
 
 ```
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 ```
+
+Start a new shell and then type `base16_ocean` (hit enter)
+
+## Configuring Your Keyboard
+
+It's common and often recommended to reassign the caps lock key to be your modifier key instead. To do this 
+
+    System Preferences > Keyboard > Modifier Keys (bottom right) > assign Caps Lock to use ^Control instead
+
+Next, set Key Repeat and Delay Until Repeat all the way to the right ("fast" and "short" respectively).
+
+## Configuring iTerm
+
+    Preferences > Profiles > [Select Your Profile] > Terminal
+
+Silence the Bell, Enable the flash and disable the Growl messages.  
 
 ## Uninstall
 

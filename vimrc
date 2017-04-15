@@ -7,14 +7,17 @@ syntax enable
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
 
 " install Vundle bundles
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
   source ~/.vimrc.bundles.local
 endif
+
+call vundle#end()
 
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
@@ -39,18 +42,17 @@ set shiftwidth=2                                             " normal mode inden
 set showcmd
 set smartcase                                                " case-sensitive search if any caps
 set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
-set tabstop=2                                                " actual tabs occupy 2 characters
-set paste                                                    " proper indent when indenting in insert mode
+set tabstop=8                                                " actual tabs occupy 8 characters
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
-set re=1                                                     " use the old regex engine to improve speed for Ruby files
-set nowrap
-set hidden                                                   " open another file without saving changes of curr file
-set hlsearch                                                 " highlight search terms
-set incsearch                                                " show search matches as you type
-set showmatch                                                " set show matching parenthesis
-set timeoutlen=1000 ttimeoutlen=0                            " leave insert mode quickly
+" set re=1                                                     " use the old regex engine to improve speed for Ruby files
+" set nowrap
+" set hidden                                                   " open another file without saving changes of curr file
+" set hlsearch                                                 " highlight search terms
+" set incsearch                                                " show search matches as you type
+" set showmatch                                                " set show matching parenthesis
+" set timeoutlen=1000 ttimeoutlen=0                            " leave insert mode quickly
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
@@ -126,11 +128,13 @@ else
 endif
 
 " Theme  
-let base16colorspace=256  " Access colors present in 256 colorspace
-set t_Co=256 " 256 color mode
 syntax enable
 set background=dark
-colorscheme base16-ocean
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256  " Access colors present in 256 colorspace
+  set t_Co=256              " 256 color mode
+  source ~/.vimrc_background
+endif
 
 " Go crazy!
 if filereadable(expand("~/.vimrc.local"))
