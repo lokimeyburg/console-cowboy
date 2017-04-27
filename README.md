@@ -16,6 +16,7 @@ My carefully curated Vim and Tmux config files. Made for Mac OS X.
 ## Why You Should Use Vim and TMUX
 
 * Watch [Chris Hunt's great intro talk](https://www.youtube.com/watch?v=9jzWDr24UHQ) about the benefits of using both Vim and TMUX
+* Read this great article explaining [why VIM and TMUX are better together](https://blog.bugsnag.com/tmux-and-vim/)
 * Check out [Gary Bernhardt quickly switching between VIM and the terminal](https://youtu.be/tdNnN5yTIeM?t=3m05s) so you can get motivated
 
 ### Vim 
