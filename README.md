@@ -31,7 +31,9 @@ My carefully curated Vim and Tmux config files. Made for Mac OS X.
 * `,[space]` strips trailing whitespace
 * `,l` begins aligning lines on a string, usually used as `,l=` to align assignments
 * `<C-hjkl>` move between windows, shorthand for `<C-w> hjkl`
-* `<C-]>` & `<C-[>` to move between vim tabs
+* `<C-]>` & `<C-[>` to move between vim tab
+* `s` and `i` to open vertical and horizontal windows from [NERDTree](https://github.com/scrooloose/nerdtree)
+* `<C-v>` and `<C-x>` to open vertical and horizontal windows from [ctrlp.vim](https://github.com/kien/ctrlp.vim)
 
 ### Tmux
 
