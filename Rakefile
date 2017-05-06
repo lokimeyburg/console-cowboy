@@ -156,6 +156,12 @@ namespace :install do
     brew_install 'ctags'
   end
 
+  desc 'Install cmake'
+  task :cmake do
+    step 'cmake'
+    brew_install 'cmake'
+  end
+
   desc 'Install reattach-to-user-namespace'
   task :reattach_to_user_namespace do
     step 'reattach-to-user-namespace'
@@ -204,6 +210,14 @@ exec /Applications/MacVim.app/Contents/MacOS/Vim "$@"
     install_github_bundle 'VundleVim','Vundle.vim'
     sh '~/bin/vim -c "PluginInstall!" -c "q" -c "q"'
   end
+
+  desc 'Compile and install YouCompleteMe'
+  task :YCM do
+    step 'YCM'
+    sh '~/.vim/bundle/YouCompleteMe/install.py --clang-completer'
+  end
+
+
 end
 
 def filemap(map)
@@ -233,6 +247,7 @@ task :install do
   Rake::Task['install:the_silver_searcher'].invoke
   Rake::Task['install:iterm'].invoke
   Rake::Task['install:ctags'].invoke
+  Rake::Task['install:cmake'].invoke
   Rake::Task['install:reattach_to_user_namespace'].invoke
   Rake::Task['install:tmux'].invoke
   Rake::Task['install:macvim'].invoke
@@ -257,6 +272,10 @@ task :install do
   sh('open', '-a', '/Applications/iTerm.app', File.expand_path('ocean-iterm-theme/base16-ocean.dark.256.itermcolors'))
 
   step 'iterm2 profiles'
+  puts
+  puts " About to compile and install YouCompleteMe"
+  # Install YouCompleteMe
+  Rake::Task['install:YCM'].invoke
   puts
   puts "  Your turn!"
   puts
