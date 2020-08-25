@@ -15,3 +15,5 @@
 * Install OhMyZsh for Ubuntu
 
 ## Configure Windows Terminal themes
+
+
