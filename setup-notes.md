@@ -13,7 +13,7 @@
 ## Setting up Ubuntu
 
 * Install OhMyZsh for Ubuntu
+* https://ohmyz.sh/
+
 
 ## Configure Windows Terminal themes
-
-
