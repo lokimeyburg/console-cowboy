@@ -21,6 +21,14 @@
 sudo apt-get install zsh
 # set as default shell
 chsh -s $(which zsh)
+# zsh
+# Upon opening a terminal again you will be asked some setup questions; select the option which populates your configuration with the default system administrator recommended settings.
+
+# install Oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Install auto-complete plugin
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 ```
 
