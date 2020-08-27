@@ -37,6 +37,16 @@ plugins=(
 )
 ```
 
+Change directory colors in Windows
+
+* https://unix.stackexchange.com/questions/94498/what-causes-this-green-background-in-ls-output
+
+```
+dircolors -p > ~/.dircolors
+vim ~/.dircolors
+OTHER_WRITABLE 01;34 # dir that is other-writable (o+w) and not sticky
+```
+
 ## Configure Windows Terminal themes
 
 
