@@ -13,7 +13,16 @@
 ## Setting up Ubuntu
 
 * Install OhMyZsh for Ubuntu
+* https://blog.entrostat.com/install-and-configure-zsh/
 * https://ohmyz.sh/
+
+```
+# install Zsh
+sudo apt-get install zsh
+# set as default shell
+chsh -s $(which zsh)
+
+```
 
 ## Configure Windows Terminal themes
 
