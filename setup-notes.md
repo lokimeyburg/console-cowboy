@@ -47,7 +47,7 @@ vim ~/.dircolors
 OTHER_WRITABLE 01;34 # dir that is other-writable (o+w) and not sticky
 
 In your `.zshrc` file, include:
-eval "$(dircolors ~/.dircolors)"
+eval `$dircolors ~/.dircolors`
 ```
 
 ## Configure Windows Terminal themes
