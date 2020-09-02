@@ -1,5 +1,11 @@
 # Setup Notes
 
+Overview
+* Pre-reqs
+* Powershell
+* Ubuntu
+* Themes
+
 ## Pre-reqs
 
 * Make sure you have Windows Terminal installed
