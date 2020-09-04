@@ -58,11 +58,11 @@ eval `$dircolors ~/.dircolors`
 
 ## Configure Windows Terminal themes
 
-
 ## Remap Caps-Lock to Escape
 
 Remap your "capslock" key to "escape." Vi was written using an ADM-3A terminal and its keyboard, which you can see here: https://catonmat.net/why-vim-uses-hjkl-as-arrow-keys has the escape-key in a sane place. This should prevent you from having to stretch to hit escape.
 
 To remap your keys on Windows, you need to download Power Toys: https://github.com/microsoft/PowerToys/releases
+
 
 
