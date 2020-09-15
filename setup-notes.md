@@ -30,6 +30,7 @@ chsh -s $(which zsh)
 # zsh
 # Upon opening a terminal again you will be asked some setup questions; select the option which populates your configuration with the default system administrator recommended settings.
 
+
 # install Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -63,7 +64,4 @@ eval `$dircolors ~/.dircolors`
 Remap your "capslock" key to "escape." Vi was written using an ADM-3A terminal and its keyboard, which you can see here: https://catonmat.net/why-vim-uses-hjkl-as-arrow-keys has the escape-key in a sane place. This should prevent you from having to stretch to hit escape.
 
 To remap your keys on Windows, you need to download Power Toys: https://github.com/microsoft/PowerToys/releases
-
-
-
 
