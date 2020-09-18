@@ -30,7 +30,6 @@ chsh -s $(which zsh)
 # zsh
 # Upon opening a terminal again you will be asked some setup questions; select the option which populates your configuration with the default system administrator recommended settings.
 
-
 # install Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
