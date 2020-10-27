@@ -56,6 +56,11 @@ In your `.zshrc` file, include:
 eval `$dircolors ~/.dircolors`
 ```
 
+## Install Git (setup SSH)
+
+* [Setup SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
+* Note that x-clip doesn't work in WSL, use `clip.exe < ~/.ssh/id_rsa.pub` instead.
+
 ## Configure Windows Terminal themes
 
 ## Remap Caps-Lock to Escape
