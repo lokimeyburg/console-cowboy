@@ -1,6 +1,6 @@
 # Setup Notes
 
-Overview
+**Overview**
 * Pre-reqs
 * Powershell
 * Ubuntu
