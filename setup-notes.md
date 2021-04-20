@@ -12,6 +12,17 @@
 * Install Ubuntu 18.04
 * Install Git for Windows and Ubuntu
 
+## Install Windows Terminal
+
+* https://docs.microsoft.com/en-us/windows/terminal/
+
+## Install Git (setup SSH)
+
+* Install Git: https://git-scm.com/download/win
+* [Setup SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
+* Note that x-clip doesn't work in WSL, use `clip.exe < ~/.ssh/id_rsa.pub` instead.
+* [Launch `ssh-agent` at startup to skip passphrase](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases)
+
 ## Setting up PowerShell
 
 * [Install PowerLine for Windows](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup)
@@ -55,12 +66,6 @@ OTHER_WRITABLE 01;34 # dir that is other-writable (o+w) and not sticky
 In your `.zshrc` file, include:
 eval `$dircolors ~/.dircolors`
 ```
-
-## Install Git (setup SSH)
-
-* [Setup SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
-* Note that x-clip doesn't work in WSL, use `clip.exe < ~/.ssh/id_rsa.pub` instead.
-* [Launch `ssh-agent` at startup to skip passphrase](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases)
 
 ## Configure Windows Terminal themes
 
