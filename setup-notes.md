@@ -25,6 +25,13 @@
 
 ## Setting up PowerShell
 
+* TODO: create custom `profile.ps1` file
+* You may run into issues with executing the profile as a non-administrator, you should run
+
+```
+set-executionpolicy remotesigned
+```
+
 * [Install PowerLine for Windows](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup)
 
 ## Setting up Ubuntu
