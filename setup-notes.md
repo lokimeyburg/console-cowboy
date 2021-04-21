@@ -26,7 +26,7 @@
 ## Setting up PowerShell
 
 * TODO: create custom `profile.ps1` file
-* You may run into issues with executing the profile as a non-administrator, you should run
+* [You may run into issues with executing the profile as a non-administrator](https://answers.microsoft.com/en-us/windows/forum/windows_10-performance/whats-wrong-with-my-windows-powershell/f05e72f2-a429-4ee0-81fb-910c8c8a1306?auth=1), you should run
 
 ```
 set-executionpolicy remotesigned
