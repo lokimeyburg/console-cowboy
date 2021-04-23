@@ -20,7 +20,9 @@
 
 * Install Git: https://git-scm.com/download/win
   * Don't create a start menu folder. You'll be doing everything in VIM anyway. 
-* [Setup SSH](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
+* Setup SSH:
+ * https://medium.com/dev-genius/set-up-ssh-key-and-git-integration-in-windows-10-native-way-c9b94952dd2c
+ * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
 * Note that x-clip doesn't work in WSL, use `clip.exe < ~/.ssh/id_rsa.pub` instead.
 * [Launch `ssh-agent` at startup to skip passphrase](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases)
 
