@@ -26,6 +26,7 @@
 
 Open Git Bash from the Start menu. Make sure to run it as an administrator.
 
+
 ```
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
