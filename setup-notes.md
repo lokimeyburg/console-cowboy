@@ -31,6 +31,10 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 Don't follow the instructions to use Git Bash for OpenSSH. Instead use the built-in Windows OpenSSH.
 
+``
+Get-Content "~/.ssh/id_ed25519.pub" | Set-Clipboard
+```
+
 * Note that x-clip doesn't work in WSL, use `clip.exe < ~/.ssh/id_rsa.pub` instead.
 * [Launch `ssh-agent` at startup to skip passphrase](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases)
 
