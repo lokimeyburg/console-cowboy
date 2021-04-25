@@ -4,8 +4,6 @@
 
 My carefully curated Vim and Tmux config files. Made for Mac OS X.
 
-![Console Cowboy preview](http://f.cl.ly/items/3t2h1U0v2n322b1H0o3q/console-cowboy.png)
-
 ## What's in it?
 
 * [iTerm 2](http://www.iterm2.com/)
