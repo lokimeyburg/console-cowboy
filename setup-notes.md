@@ -37,7 +37,7 @@ Get-Content "~/.ssh/id_ed25519.pub" | Set-Clipboard
 ```
 
 * Note that x-clip doesn't work in WSL, use `clip.exe < ~/.ssh/id_rsa.pub` instead.
-* [Launch `ssh-agent` at startup to skip passphrase](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases)
+* Use SSH Agent: https://stackoverflow.com/questions/48843643/using-git-with-powershell-and-ssh-key-with-passphrase
 
 ## Setting up PowerShell
 
