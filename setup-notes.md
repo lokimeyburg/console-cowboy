@@ -18,33 +18,78 @@
 
 ## Install Git (setup SSH)
 
-* Install Git: https://git-scm.com/download/win
-  * Don't create a start menu folder. You'll be doing everything in VIM anyway. 
-* Setup SSH:
- * https://medium.com/dev-genius/set-up-ssh-key-and-git-integration-in-windows-10-native-way-c9b94952dd2c
- * https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
+Install Git: https://git-scm.com/download/win. Don't create a start menu folder. You'll be doing everything in VIM anyway. 
 
-Open Git Bash from the Start menu. Make sure to run it as an administrator.
+**Setup SSH**
+Note: open PowerShell as Administrator. Start > PowerShell > Run as administrator.
 
+First you will need to enable OpenSSH Agent which comes with Windows. Go to Start > Search > Services. Find and double-click on OpenSSH Authentication Agent. Select Startup type to Automatic (Delayed Start). Then select 'start' to run the service. 
+
+You can also manually start the service by running
+```
+Start-Service ssh-agent
+```
+
+**Generate your SSH keys**
 ```
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
-Don't follow the instructions to use Git Bash for OpenSSH. Instead use the built-in Windows OpenSSH.
+For the location question, just hit enter. Choose your passphrase.
 
-``
-Get-Content "~/.ssh/id_ed25519.pub" | Set-Clipboard
+Then add your keys
+```
+ssh-add C:\Users\lomeybur\.ssh\id_ed25519
+```
+Copy your keys to your clipboard
+```
+Get-Content "~/.ssh/id_ed25519" | Set-Clipboard
+```
+**Upload to Github**
+
+Go to Github > Settings > SSH and GPG keys. Create a new key and upload the one copied to your clipboard. Next, you can test it out in your terminal.
+```
+ssh -T git@github.com
+```
+Set your Git credentials
+```
+git config --global user.name "<github name>"
+git config --global user.email <name@email.com>
 ```
 
-* Note that x-clip doesn't work in WSL, use `clip.exe < ~/.ssh/id_rsa.pub` instead.
-* Use SSH Agent: https://stackoverflow.com/questions/48843643/using-git-with-powershell-and-ssh-key-with-passphrase
+Setup your SSH keys to always sign your commits. Create a file called `config` in `~/.ssh/config` (where your SSH keys are found). Add the following to the file:
 
-## Setting up PowerShell
+```
+[user]
+	name = <github full name>
+	email = <email@address.com>
+[core]
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+```
 
-* TODO: create custom `profile.ps1` file
-* [You may run into issues with executing the profile as a non-administrator](https://answers.microsoft.com/en-us/windows/forum/windows_10-performance/whats-wrong-with-my-windows-powershell/f05e72f2-a429-4ee0-81fb-910c8c8a1306?auth=1), you should run
+## Setting up PowerShell, Powerline and Fonts
+
+Note: open PowerShell as Administrator. Start > PowerShell > Run as administrator. Set execution policy to allow profiles to be executed.
 
 ```
 set-executionpolicy remotesigned
+```
+
+Install PowerLine
+```
+Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser
+Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
+```
+
+Setup Profile
+```
+notepad $PROFILE
+```
+The  add the following:
+```
+Import-Module posh-git
+Import-Module oh-my-posh
+Set-Theme Paradox
 ```
 
 * [Install PowerLine for Windows](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup)
