@@ -8,7 +8,8 @@
 
 ## Pre-reqs
 
-* Make sure you have Windows Terminal installed: https://docs.microsoft.com/en-us/windows/terminal/
+* Visual Studio Code: https://code.visualstudio.com/
+* Windows Terminal: https://docs.microsoft.com/en-us/windows/terminal/
 
 ## Install Git (setup SSH)
 
@@ -75,9 +76,9 @@ Install-Module oh-my-posh -Scope CurrentUser
 Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
 ```
 
-Setup Profile
+Setup Microsoft.PowerShell_profile.ps1
 ```
-notepad $PROFILE
+code $PROFILE
 ```
 The  add the following:
 ```
