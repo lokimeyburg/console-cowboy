@@ -16,6 +16,7 @@
 Install Git: https://git-scm.com/download/win. Don't create a start menu folder. You'll be doing everything in VIM anyway. 
 
 **Setup SSH**
+
 Note: open PowerShell as Administrator. Start > PowerShell > Run as administrator.
 
 First you will need to enable OpenSSH Agent which comes with Windows. Go to Start > Search > Services. Find and double-click on OpenSSH Authentication Agent. Select Startup type to Automatic (Delayed Start). Then select 'start' to run the service. 
@@ -80,7 +81,9 @@ Setup Microsoft.PowerShell_profile.ps1
 ```
 code $PROFILE
 ```
-The  add the following:
+
+Then add the following to the file:
+
 ```
 Import-Module posh-git
 Import-Module oh-my-posh
