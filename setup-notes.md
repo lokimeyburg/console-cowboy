@@ -2,19 +2,13 @@
 
 **Overview**
 * Pre-reqs
-* Powershell
+* Install Git
+* Setting up PowerShell, Powerline and Fonts
 * Ubuntu
-* Themes
 
 ## Pre-reqs
 
-* Make sure you have Windows Terminal installed
-* Install Ubuntu 18.04
-* Install Git for Windows and Ubuntu
-
-## Install Windows Terminal
-
-* https://docs.microsoft.com/en-us/windows/terminal/
+* Make sure you have Windows Terminal installed: https://docs.microsoft.com/en-us/windows/terminal/
 
 ## Install Git (setup SSH)
 
@@ -92,6 +86,9 @@ Import-Module oh-my-posh
 Set-Theme Paradox
 ```
 
+Restart Windows Terminal to see if PowerLine works for you. Next you will need to install the Cascadia Code fonts and use the `Cascadia Code PL` font. Download the fonts here: https://github.com/microsoft/cascadia-code. Be sure to install the True-Type Fonts (TFF). Once that's done, go to Windows Terminal > Settings > Windows PowerShell > Appearance. Set the Font Face to `Cascadia Code PL`, color scheme to `One Half Dark` and font-weight to `11`. You should also go to Visual Studio Code and set your fonts and terminal fonts to use Cascadia Code PL and install the `One Dark Theme` to match Windows Temrinal.
+
+Links:
 * [Install PowerLine for Windows](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup)
 
 ## Setting up Ubuntu
