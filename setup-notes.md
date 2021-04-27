@@ -4,6 +4,7 @@
 * Pre-reqs
 * Install Git
 * Setting up PowerShell, Powerline and Fonts
+* Node, NPM, NVM
 * Ubuntu
 
 ## Pre-reqs
