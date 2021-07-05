@@ -96,6 +96,15 @@ Restart Windows Terminal to see if PowerLine works for you. Next you will need t
 Links:
 * [Install PowerLine for Windows](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup)
 
+## Node, NPM and NVM
+
+Visit this URL to download NVM for Windows. https://github.com/coreybutler/nvm-windows
+Once you have installed. Restart Microsoft Terminal and then run:
+
+```
+nvm --version
+```
+
 ## Setting up Ubuntu
 
 * Install OhMyZsh for Ubuntu
@@ -143,3 +152,6 @@ eval `$dircolors ~/.dircolors`
 Remap your "capslock" key to "escape." Vi was written using an ADM-3A terminal and its keyboard, which you can see here: https://catonmat.net/why-vim-uses-hjkl-as-arrow-keys has the escape-key in a sane place. This should prevent you from having to stretch to hit escape.
 
 To remap your keys on Windows, you need to download Power Toys: https://github.com/microsoft/PowerToys/releases
+
+## Other VSCode tools
+- Tailwind CSS Intellisense
