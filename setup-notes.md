@@ -145,6 +145,9 @@ In your `.zshrc` file, include:
 eval `$dircolors ~/.dircolors`
 ```
 
+## Installing WSL2 and remote extensions
+- https://docs.microsoft.com/en-us/windows/wsl/install-win10
+
 ## Configure Windows Terminal themes
 
 ## Remap Caps-Lock to Escape
