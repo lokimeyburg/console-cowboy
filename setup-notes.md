@@ -157,4 +157,4 @@ Remap your "capslock" key to "escape." Vi was written using an ADM-3A terminal a
 To remap your keys on Windows, you need to download Power Toys: https://github.com/microsoft/PowerToys/releases
 
 ## Other VSCode tools
-- Tailwind CSS Intellisense
+- Tailwind CSS Intellisense (TODO: does not work in TSX files)
