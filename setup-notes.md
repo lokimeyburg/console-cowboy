@@ -147,6 +147,7 @@ eval `$dircolors ~/.dircolors`
 
 ## Installing WSL2 and remote extensions
 - https://docs.microsoft.com/en-us/windows/wsl/install-win10
+- [Installing Git](https://github.com/noejon/wsl2_setup#git)
 
 ## Configure Windows Terminal themes
 
